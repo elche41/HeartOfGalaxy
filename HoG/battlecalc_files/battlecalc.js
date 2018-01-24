@@ -802,7 +802,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		arr(shiplist.getElementsByTagName("input")).map(function(input) {
 			if(input.type === "button") return;
 			if(saveData.options["showShipsLeftOrShipsLost"] == "Show ships left")
-				input.showShipsLeftOrShipsLost.innerText = warfleet.ships[input.ship.id];
+				input.showShipsLeftOrShipsLost.innerText = warfleet.ships[input.ship.id] + "(" + warfleet.ships[input.ship.id]/playerShipsBeforeFight[input.ship.id] + "%);
 			else if (saveData.options["showShipsLeftOrShipsLost"] == "Show ships lost")
 				input.showShipsLeftOrShipsLost.innerText = "-" + (playerShipsBeforeFight[input.ship.id] - warfleet.ships[input.ship.id]);
 		});
